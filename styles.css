@@ -1,1 +1,80 @@
 /*Maak hier jouw CSS!*/
+
+body {
+    margin: 0px;
+}
+
+#container {
+    background-color: yellow;
+    padding: 16px;
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "item-a"
+        "item-b"
+        "item-c"
+        "item-d"
+        "item-e"
+        "item-f"
+}
+
+.item {
+    background-color: red;
+    height:50px;
+    color: white;
+    border: 2px solid darkred;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#item-a {
+    grid-area: item-a;
+}
+
+#item-b {
+    grid-area: item-b;
+    height: auto;
+    padding: 16px;
+}
+
+#item-c {
+    grid-area: item-c;
+}
+
+#item-d {
+    grid-area: item-d;
+}
+
+#item-e {
+    grid-area: item-e;
+    margin-bottom: 50px;
+}
+
+#item-f {
+    grid-area: item-f;
+}
+
+@media (min-width: 1000px) {
+
+    #container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 50px 190px 100px auto 50px;
+        grid-template-areas:
+            "item-a item-c item-c"
+            "item-b item-c item-c"
+            "item-b item-e item-d"
+            "item-b item-e ."
+            "item-f item-f item-f"
+    }
+
+    .item {
+        height: auto;
+    }
+
+    #item-e {
+        margin-bottom: 0px;
+    }
+
+}
